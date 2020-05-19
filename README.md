@@ -6,4 +6,4 @@ Scraping India today world news website using google bot.
 
 Live version: -https://agile-crag-76343.herokuapp.com/ 
 
-<img src="https://j.gifs.com/4Qnz4k.gif" />
+![Preview of the app](https://github.com/somnath796/News_aggregate/blob/master/preview.gif)
