@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <center><h1>NEWS AGGREGATOR</h1>
+            <a href="{% url 'scrape' %}" class="btn btn-success">Get my morning news</a>
+        </form>
+    </center>
+    </div>
+
+
+     <div class="container">
+        <div class="row">
+          {% for object in object_list %}
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+    <div class="card card-cascade narrower">
+
+    <!-- Card image -->
+        <div class="view view-cascade overlay">
+          <img class="card-img-top" src="{{ object.image }}"
+            alt="Card image cap">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade">
+
+         
+          <!-- Title -->
+          <a href="{{object.url}}"><h4 class="font-weight-bold card-title">{{object.title}}</h4></a>
+          <!-- Text -->
+          <p class="card-text">{{ object.description }}</p>
+          <!-- Button -->
+          <a class="btn btn-unique" href="{{object.url}}">Read More</a>
+
+    </div>
+  </div>
+    </div>
+     {% endfor %}
+  </div>
+</div>
+<!-- Card Narrower -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <div class="container">
+        <div class="row">
+          {% for object in object_list %}
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src = "{{ object.image }}">
+                    <div class="card-block">
+                        <a href="{{object.url}}"><h5 class="card-title">{{object.title}}</h5></a>
+                        
+                        <div class="card-text">
+                            {{ object.description }}
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    -->
+
+  <!--<div class="card-group vgr-cards" style="padding: 10px; margin: 20px;">
+    {% for object in object_list %}
+    <div class="card" style="width: 18rem;border:5px black solid;">
+  <img class="card-img-top" src = "{{ object.image }}">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div class="card-body">
+           <a href="{{object.url}}"><h5 class="card-title">{{object.title}}</h5></a>
+           <p class="text-justify">{{ object.description }}</p>
+      </div>
+    </h5>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>-->
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
